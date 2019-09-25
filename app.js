@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
           if (error || response.statusCode !== 200) {
               return res.status(500).json({ type: 'error', message: err.message });
           }
-          console.log("here's body", body)
+          console.log("here's body", typeof body)
           res.json(body);
       }
   )
