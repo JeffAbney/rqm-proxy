@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
               return res.status(500).json({ type: 'error', message: err.message });
           }
           console.log("here's body", body)
-          res.send(body);
+          res.json(body);
       }
   )
 });
