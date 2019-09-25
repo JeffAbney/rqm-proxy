@@ -1,5 +1,6 @@
 var express = require('express');
 var request = require('request');
+var rp = require('request-promise');
 const app = express();
 
 app.use(function(req, res, next) {
@@ -11,7 +12,7 @@ app.use(function(req, res, next) {
 });
 
 app.get('/', (req, res) => {
-  request(
+  rp(
       { url: 'https://quotesondesign.com/wp-json/wp/v2/posts?filter[orderby]=rand' },
       (error, response, body) => {
           if (error || response.statusCode !== 200) {
