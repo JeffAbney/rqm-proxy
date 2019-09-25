@@ -12,8 +12,12 @@ app.use(function(req, res, next) {
 });
 
 app.get('/', (req, res) => {
+  let options = {
+    url: 'https://quotesondesign.com/wp-json/wp/v2/posts?filter[orderby]=rand',
+    json: true
+  }
   rp(
-      { url: 'https://quotesondesign.com/wp-json/wp/v2/posts?filter[orderby]=rand' },
+      options,
       (error, response, body) => {
           if (error || response.statusCode !== 200) {
               return res.status(500).json({ type: 'error', message: err.message });
