@@ -1,6 +1,6 @@
 var express = require('express');
 var request = require('request');
-var rp = require('request-promise');
+var rp = require('request-promise-native');
 const app = express();
 
 app.use(function(req, res, next) {
