@@ -10,7 +10,6 @@ app.use(function(req, res, next) {
 });
 
 app.get('/', (req, res) => {
-  res.send("PROXY SERVER UP IN HERE!!!")
   request(
       { url: 'https://quotesondesign.com/wp-json/wp/v2/posts?filter[orderby]=rand' },
       (error, response, body) => {
